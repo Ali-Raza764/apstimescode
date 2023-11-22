@@ -2,7 +2,8 @@ import { BlogItem } from "@/components";
 import Image from "next/image";
 
 export default async function Home() {
-  const sample = await fetch("http://localhost:3000/api/getAllBlogs", { cache: "no-store" });
+  const apiUrl = process.env.NODE_ENV === 'development' ? "http://localhost:3000/api/getAllBlogs" : "https://apstimesblog.netlify.app";
+  const sample = await fetch(apiUrl, { cache: "no-store" });
   const alldata = await sample.json();
   const ArticleData = alldata.message || []; // check that the data exists and it is an array
 

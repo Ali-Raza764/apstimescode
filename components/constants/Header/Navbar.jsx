@@ -1,16 +1,12 @@
 "use client";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import { navutil } from "./navutil";
-import { useAuth } from "@/utils/useAuth";
 
 const Navbar = () => {
   const nav = useRef();
-  const router = useRouter();
   const [active, setActive] = useState("Home");
   const [showNav, setshowNav] = useState(false);
-  const authUser = useAuth();
 
   const navItemClass =
     "item flex items-center justify-start gap-x-[4rem] w-full text-2xl font-bold my-6 sm:gap-x-[6.5rem] hover:text-red-600";
@@ -74,27 +70,6 @@ const Navbar = () => {
                 </div>
               );
             })}
-          </div>
-
-          <div className="flex-props mb-11">
-            {authUser ? (
-              <>Signed As: {authUser.email}</>
-            ) : (
-              <button
-                className={
-                  active == "login"
-                    ? "w-[15.2rem] px-2 text-center py-1 border border-gray-600 rounded-md bg-red-600 text-xl text-white font-bold "
-                    : "w-[15.2rem] px-2 text-center py-1 border border-gray-600 rounded-md bg-green-800 text-xl text-white font-bold outline-none border-none"
-                }
-                onClick={() => {
-                  setActive("login");
-                  setshowNav(false)
-                  router.push("/login");
-                }}
-              >
-                Login
-              </button>
-            )}
           </div>
 
           <div>&copy; APSTimes all rights reserved</div>

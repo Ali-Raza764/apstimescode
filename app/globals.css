@@ -7,6 +7,11 @@
     align-items: center;
     justify-content: center;
 }
+.flex-props-c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .flex-props-b{
     display: flex;
     align-items: center;

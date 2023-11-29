@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Header></Header>
-        <NextTopLoader height={5} color="#008000"/>
+        <NextTopLoader height={3} color="#008000"/>
         {children}
         <Footer></Footer>
         <ToastContainer

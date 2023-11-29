@@ -1,59 +1,12 @@
-import React from "react";
-import {
-  getFirestore,
-  query,
-  collection,
-  where,
-  getDocs,
-  limit,
-} from "firebase/firestore";
-import { app } from "@/config/firebase";
 import Image from "next/image";
 import { AiFillEye } from "react-icons/ai";
 import { BlogItem } from "@/components";
-
-const getArticleData = async (slug) => {
-  const db = getFirestore(app);
-  const q = query(collection(db, "blogs"), where("slug", "==", slug));
-
-  try {
-    const querySnapshot = await getDocs(q);
-    if (querySnapshot.empty) {
-      console.log("No matching documents.");
-      return null;
-    }
-
-    const doc = querySnapshot.docs[0];
-    return doc.data();
-  } catch (error) {
-    console.error("Error getting documents: ", error);
-    return null;
-  }
-};
-const getRealatedPosts = async(category) =>{
-  const db = getFirestore(app);
-  const q = query(collection(db, "blogs"), where("category", "==", category), limit(8));
-  const relatedDocs = []
-
-  try {
-    const querySnapshot = await getDocs(q);
-    if (querySnapshot.empty) {
-      console.log("No matching documents.");
-      return null;
-    }
-    querySnapshot.forEach((doc)=>{
-      relatedDocs.push(doc.data())
-    })
-    return relatedDocs
-  } catch (error) {
-    console.error("Error getting documents: ", error);
-    return null;
-  }
-}
+import { fetchAndFilterBlogs } from "@/utils/fetchAndFilterBlogs";
 
 const Page = async ({ params }) => {
-  const articleData = await getArticleData(params.slug);
-  const relatedPosts = await getRealatedPosts(articleData.category);
+  const response =  await fetchAndFilterBlogs({ pageType: "blogDetails", slug: params.slug });
+  const articleData = response.selectedBlog
+  const relatedPosts = response.relatedBlogs
   const content = { __html: articleData.blogContent };
 
   return (

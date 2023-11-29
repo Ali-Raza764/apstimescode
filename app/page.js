@@ -1,11 +1,9 @@
 import { BlogItem } from "@/components";
 import Image from "next/image";
+import { fetchAndFilterBlogs } from "@/utils/fetchAndFilterBlogs ";
 
 export default async function Home() {
-  const apiUrl = process.env.NODE_ENV === 'development' ? "http://localhost:3000/api/getAllBlogs" : "https://apstimesblog.netlify.app";
-  const sample = await fetch(apiUrl, { cache: "no-store" });
-  const alldata = await sample.json();
-  const ArticleData = alldata.message || []; // check that the data exists and it is an array
+  const BlogData = await fetchAndFilterBlogs({ pageType: "home" });
 
   return (
     <main className="min-h-screen px-6 sm:px-11 py-4 sm:py-11 flex-props flex-col">
@@ -47,7 +45,7 @@ export default async function Home() {
 
       <div className="px-2 py-4 sm:p-6 flex-props flex-wrap my-3 gap-y-5 gap-x-5">
         <h2 className="text-2xl font-bold text-left w-full">Latest</h2>
-        {ArticleData.map((item) => {
+        {BlogData.map((item) => {
           return <BlogItem item={item} key={item.title} />;
         })}
       </div>

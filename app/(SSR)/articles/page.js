@@ -2,8 +2,7 @@ import { BlogItem } from "@/components";
 import { fetchAndFilterBlogs } from "@/utils/fetchAndFilterBlogs";
 
 const page = async() => {
-  const allBlogDataArticles = await fetchAndFilterBlogs({ pageType: "articles" });
-  console.log("Articles page data \n", BlogData);
+  const BlogData = await fetchAndFilterBlogs({ pageType: "articles" });
 
   return (
     <section>

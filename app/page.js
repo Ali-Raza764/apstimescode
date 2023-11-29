@@ -1,6 +1,6 @@
 import { BlogItem } from "@/components";
 import Image from "next/image";
-import { fetchAndFilterBlogs } from "@/utils/fetchAndFilterBlogs ";
+import { fetchAndFilterBlogs } from "@/utils/fetchAndFilterBlogs";
 
 export default async function Home() {
   const BlogData = await fetchAndFilterBlogs({ pageType: "home" });

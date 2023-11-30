@@ -1,6 +1,6 @@
-import Navbar from "./Navbar";
+import Navbar from "./components-header/Navbar";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-import Mainheader from "./Mainheader";
+import Mainheader from "./components-header/Mainheader";
 import Link from "next/link";
 
 const Header = () => {
@@ -27,10 +27,10 @@ const Header = () => {
       </Link>
 
       <div className="flex-props gap-x-2">
-        <a href="/">
+        <a href="https://instagram.com">
           <FaInstagram className="text-2xl" />
         </a>
-        <a href="/">
+        <a href="https://whatsapp.com">
           <FaWhatsapp className="text-2xl" />
         </a>
       </div>

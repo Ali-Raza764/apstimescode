@@ -6,7 +6,6 @@ import Dropdown from "./Dropdown";
 
 const Navbar = () => {
   const nav = useRef();
-  const [active, setActive] = useState("Home");
   const [showNav, setshowNav] = useState(false);
 
   const navItemClass =
@@ -47,24 +46,14 @@ const Navbar = () => {
 
           <div className="link-container mt-1 mb-2 text-left gap-y-5">
             {navutil?.map((item) => {
-              const isItemActive = item.name === active;
-              const itemClass = isItemActive
-                ? `${navItemClass} text-red-600`
-                : navItemClass;
-
               const Icon = item.icon; // React component for the icon
-
               return (
                 <div
-                  onClick={() => {
-                    setActive(item.name);
-                    setshowNav(false);
-                  }}
                   key={item.name}
                 >
-                  <Link href={item.url} className={itemClass}>
+                  <Link href={item.url} className={navItemClass}>
                     <div className="icon text-2xl">
-                      <Icon size={24} /> {/* Render the icon */}
+                      <Icon size={24} className="text-red-600"/> {/* Render the icon */}
                     </div>
                     <h3>{item.name}</h3>
                   </Link>

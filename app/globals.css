@@ -2,35 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-.flex-props{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.flex-props {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.flex-props-c{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.flex-props-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.flex-props-b{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.flex-props-b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 ::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-  }
+  height: 8px;
+  width: 8px;
+}
 ::-webkit-scrollbar-thumb {
-    width: 8px;
-    height: 8px;
-    border-radius: 25px;
-    background-color: gray;
-  }
-  .navbar{
-    z-index: 999;
-  }
-  .dropdown:hover .hidden {
-    display: block;
-  }
-  
+  width: 8px;
+  height: 8px;
+  border-radius: 25px;
+  background-color: gray;
+}
+.navbar {
+  z-index: 999;
+}
+.dropdown:hover .hidden {
+  display: block;
+}
+.dropdown:focus .hidden {
+  display: block;
+}

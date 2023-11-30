@@ -30,3 +30,7 @@
   .navbar{
     z-index: 999;
   }
+  .dropdown:hover .hidden {
+    display: block;
+  }
+  

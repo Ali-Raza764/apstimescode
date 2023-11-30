@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { navutil } from "./navutil";
+import Dropdown from "./Dropdown";
 
 const Navbar = () => {
   const nav = useRef();
@@ -71,6 +72,7 @@ const Navbar = () => {
               );
             })}
           </div>
+          <Dropdown />
 
           <div>&copy; APSTimes all rights reserved</div>
         </div>

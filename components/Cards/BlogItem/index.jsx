@@ -27,7 +27,7 @@ const BlogItem = ({ item }) => {
         <div className="flex-props-b mt-auto">
           <Link
             href={`/blogdetails/${item.slug}`}
-            className="text-indigo-900 inline-flex items-center md:mb-2 lg:mb-0"
+            className="text-indigo-900 font-bold inline-flex items-center md:mb-2 lg:mb-0"
           >
             Read
             <AiOutlineArrowRight className="text-lg"/>

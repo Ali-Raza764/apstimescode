@@ -25,7 +25,7 @@ const Page = async ({ params }) => {
       <div className="flex items-center justify-start mt-4 mb-4 flex-wrap">
         <a
           href="#"
-          className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4"
+          className="px-2 py-1 font-bold text-gray-900 bg-red-600 rounded-lg hover:bg-gray-500 mr-4"
         >
           {articleData.category}
         </a>
@@ -34,14 +34,14 @@ const Page = async ({ params }) => {
       <div className="mt-2">
         <h1
           href="#"
-          className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-green-800  hover:underline"
+          className="w-full text-center text-2xl  sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-black hover:underline"
         >
           {articleData.title}
         </h1>
 
         {/*post views*/}
         <div className="flex justify-start items-center mt-2">
-          <p className="text-sm text-red-500 font-bold bg-gray-100 rounded-full py-2 px-2 hover:text-red-600">
+          <p className="text-xl text-gray-900 font-bold py-2 px-2 hover:text-red-600">
             3000
           </p>
           <AiFillEye />

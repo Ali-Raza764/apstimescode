@@ -27,11 +27,11 @@ const Header = () => {
       </Link>
 
       <div className="flex-props gap-x-2">
-        <a href="https://instagram.com">
+        <a href="https://instagram.com" aria-label="See our instagram">
           <FaInstagram className="text-2xl" />
         </a>
         <a href="https://whatsapp.com">
-          <FaWhatsapp className="text-2xl" />
+          <FaWhatsapp className="text-2xl" aria-label="Check Whatsapp Channel"/>
         </a>
       </div>
 
